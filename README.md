@@ -12,8 +12,8 @@ Para instalar ANTLR, puede seguir las instrucciones en la [documentación oficia
 ### Entradas Permitidas
 ![Entradas Permitidas](Images/EntradasPermitidas.png)
 
-### Forma Gramatical De Cada Programa
-![Texto Alternativo](Images/TablasAsDes.png)
+### Especificaciones De La Gramatica
+![Gramatica ANTLR](Images/TablasAsDes.png)
 
 ### Ejecución del Programa Calculadora en ANTLR
 Una vez configurado el entorno de ANTLR, asegúrese de estar en la carpeta "antlr" y abrir la consola. A continuación, ejecute los siguientes comandos, cada uno correspondiente a una variante de la gramática:
@@ -40,17 +40,84 @@ El programa consta de un menú en el que puede seleccionar la gramática especí
 
 ¡Disfrute utilizando la calculadora implementada con ANTLR! Si tiene alguna pregunta o encuentra algún problema, no dude en abrir un issue en este repositorio. ¡Gracias por su interés!
 
-## Segundo Punto Flex Y Bison
-La carpeta "bison" alberga cuatro gramáticas de Bison con Flex, cada una representando una variación de una calculadora básica. Además, incluye los archivos correspondientes necesarios para el funcionamiento del programa.
+## Segunda Parte - Ejecución del Segundo Punto
 
-### Configuración del Entorno
-Antes de ejecutar el programa, asegúrese de tener configurado el entorno de Flex y Bison.
+La segunda parte del proyecto se encuentra en la carpeta "bison", que contiene cuatro gramáticas de Bison junto con sus respectivos archivos de Flex. Para ejecutar este punto del proyecto, siga los siguientes pasos:
 
-### Instalación de Flex Y Bison
-Para instalar ANTLR, debe ejecutar el siguiente comando en su consola (funcionamiento en ubuntu):
-```bash
-sudo apt-get install flex bison
-```
+### Requisitos Previos
+
+Antes de ejecutar el programa, asegúrese de tener instalado make en su entorno para poder utilizar el Makefile proporcionado.
+
+#### Instalación de make
+
+##### Para Linux:
+
+1. Abre la terminal.
+2. Ejecuta el siguiente comando para instalar make:
+
+   - Para distribuciones basadas en Debian y Ubuntu (incluyendo Linux Mint):
+
+     ```bash
+     sudo apt-get install make
+     ```
+
+   - Para distribuciones basadas en Fedora, CentOS y Red Hat:
+
+     ```bash
+     sudo yum install make
+     ```
+
+##### Para macOS:
+
+1. Abre la terminal.
+2. Si aún no lo tienes, instala Homebrew ejecutando el siguiente comando:
+
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+3. Luego, ejecuta el siguiente comando para instalar make:
+
+   ```bash
+   brew install make
+   ```
+
+##### Para Windows:
+
+1. Descarga e instala el paquete de herramientas de GNU para Windows, también conocido como MinGW. Puedes descargarlo desde el siguiente enlace: [MinGW](https://sourceforge.net/projects/mingw/)
+2. Durante la instalación, asegúrate de seleccionar la opción para instalar mingw32-make.
+
+### Entradas Permitidas
+![Entradas Permitidas](Images/EntradasFlex.png)
+
+### Especificaciones De La Gramatica
+![Gramatica ANTLR](Images/GramaticaFlex.png)
+
+### Ejecución del Programa
+
+1. Asegúrese de estar en la carpeta "bison".
+2. Abra la consola y ejecute uno de los siguientes comandos, según la gramática que desee utilizar:
+
+   - make normal: Para la gramática con asociatividad común y precedencia común.
+   - make pre: Para la gramática con asociatividad común y precedencia modificada.
+   - make aso: Para la gramática con asociatividad modificada y precedencia común.
+   - make mod: Para la gramática con asociatividad modificada y precedencia modificada.
+
+3. Después de compilar, puede editar el archivo "EjemploEntradasCalc" para especificar las entradas deseadas o agregar un archivo .txt nuevo con esas entradas en líneas diferentes.
+
+4. Para ejecutar el programa, en la consola, ejecute el siguiente comando correspondiente a la gramática que desea probar y al archivo .txt a probar:
+   ```bash
+   - ./normal EjemploEntradasCalc.txt
+   - ./pre EjemploEntradasCalc.txt
+   - ./aso EjemploEntradasCalc.txt
+   - ./mod EjemploEntradasCalc.txt
+   ```
+
+**En caso de que no ingrese un .txt, el programa recibira un input del usuario**
+### Salida del Programa
+
+El programa mostrará todas las expresiones de salida correspondientes a las entradas proporcionadas, según la gramática seleccionada.
+
 
 
 ## Descripción del Trabajo

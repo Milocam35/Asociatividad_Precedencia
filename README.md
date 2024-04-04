@@ -3,16 +3,16 @@
 ## Primer Punto ANTLR:
 Este repositorio contiene dos carpetas principales, cada una dedicada a un punto específico del trabajo. La carpeta "antlr" alberga cuatro gramáticas de ANTLR, cada una representando una variación de una calculadora básica. Además, incluye los archivos correspondientes necesarios para el funcionamiento del programa.
 
-## Configuración del Entorno
+### Configuración del Entorno
 Antes de ejecutar el programa, asegúrese de tener configurado el entorno de ANTLR con el lenguaje objetivo Python.
 
-## Instalación de ANTLR
+### Instalación de ANTLR
 Para instalar ANTLR, puede seguir las instrucciones en la [documentación oficial](https://www.antlr.org).
 
-## Entradas Permitidas
+### Entradas Permitidas
 ![Entradas Permitidas](EntradasPermitidas.png)
 
-## Forma Gramatical De Cada Programa
+### Forma Gramatical De Cada Programa
 ![Texto Alternativo](TablasAsDes.png)
 
 ### Ejecución del Programa Calculadora en ANTLR
@@ -35,10 +35,23 @@ Si desea realizar pruebas específicas, puede modificar el archivo "EjemploEntra
 python3 MainCalculadora.py EjemploEntradaCalc.txt
 ```
 
-## Menú de Selección de Gramática
+### Menú de Selección de Gramática
 El programa consta de un menú en el que puede seleccionar la gramática específica que desee. Las gramáticas se han definido de acuerdo a las especificaciones detalladas en el documento adjunto.
 
 ¡Disfrute utilizando la calculadora implementada con ANTLR! Si tiene alguna pregunta o encuentra algún problema, no dude en abrir un issue en este repositorio. ¡Gracias por su interés!
+
+## Segundo Punto Flex Y Bison
+La carpeta "bison" alberga cuatro gramáticas de Bison con Flex, cada una representando una variación de una calculadora básica. Además, incluye los archivos correspondientes necesarios para el funcionamiento del programa.
+
+### Configuración del Entorno
+Antes de ejecutar el programa, asegúrese de tener configurado el entorno de Flex y Bison.
+
+### Instalación de Flex Y Bison
+Para instalar ANTLR, debe ejecutar el siguiente comando en su consola (funcionamiento en ubuntu):
+```bash
+sudo apt-get install flex bison
+```
+
 
 ## Descripción del Trabajo
 

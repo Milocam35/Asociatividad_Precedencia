@@ -9,11 +9,12 @@ Antes de ejecutar el programa, asegúrese de tener configurado el entorno de ANT
 ### Instalación de ANTLR
 Para instalar ANTLR, puede seguir las instrucciones en la [documentación oficial](https://www.antlr.org).
 
+### Especificaciones De La Gramatica
+![Gramatica ANTLR](Images/TablasAsDes.png)
+
 ### Entradas Permitidas
 ![Entradas Permitidas](Images/EntradasPermitidas.png)
 
-### Especificaciones De La Gramatica
-![Gramatica ANTLR](Images/TablasAsDes.png)
 
 ### Ejecución del Programa Calculadora en ANTLR
 Una vez configurado el entorno de ANTLR, asegúrese de estar en la carpeta "antlr" y abrir la consola. A continuación, ejecute los siguientes comandos, cada uno correspondiente a una variante de la gramática:
@@ -38,7 +39,6 @@ python3 MainCalculadora.py EjemploEntradaCalc.txt
 ### Menú de Selección de Gramática
 El programa consta de un menú en el que puede seleccionar la gramática específica que desee. Las gramáticas se han definido de acuerdo a las especificaciones detalladas en el documento adjunto.
 
-¡Disfrute utilizando la calculadora implementada con ANTLR! Si tiene alguna pregunta o encuentra algún problema, no dude en abrir un issue en este repositorio. ¡Gracias por su interés!
 
 ## Segunda Parte - Ejecución del Segundo Punto
 
@@ -87,11 +87,12 @@ Antes de ejecutar el programa, asegúrese de tener instalado make en su entorno 
 1. Descarga e instala el paquete de herramientas de GNU para Windows, también conocido como MinGW. Puedes descargarlo desde el siguiente enlace: [MinGW](https://sourceforge.net/projects/mingw/)
 2. Durante la instalación, asegúrate de seleccionar la opción para instalar mingw32-make.
 
+### Especificaciones De La Gramatica
+![Gramatica ANTLR](Images/GramaticaFlex.png)
+
 ### Entradas Permitidas
 ![Entradas Permitidas](Images/EntradasFlex.png)
 
-### Especificaciones De La Gramatica
-![Gramatica ANTLR](Images/GramaticaFlex.png)
 
 ### Ejecución del Programa
 
@@ -107,10 +108,10 @@ Antes de ejecutar el programa, asegúrese de tener instalado make en su entorno 
 
 4. Para ejecutar el programa, en la consola, ejecute el siguiente comando correspondiente a la gramática que desea probar y al archivo .txt a probar:
    ```bash
-   - ./normal EjemploEntradasCalc.txt
-   - ./pre EjemploEntradasCalc.txt
-   - ./aso EjemploEntradasCalc.txt
-   - ./mod EjemploEntradasCalc.txt
+   - ./normal < EjemploEntradasCalc.txt
+   - ./pre < EjemploEntradasCalc.txt
+   - ./aso < EjemploEntradasCalc.txt
+   - ./mod < EjemploEntradasCalc.txt
    ```
 
 **En caso de que no ingrese un .txt, el programa recibira un input del usuario**

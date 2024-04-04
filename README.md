@@ -1,4 +1,4 @@
-# Modificación de Precedencia y Asociatividad en Gramáticas: Proyecto README
+# Modificación de Precedencia y Asociatividad en Gramáticas: Proyecto LENGUAJES DE PROGRAMACIÓN
 
 ## Descripción del Proyecto
 

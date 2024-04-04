@@ -10,10 +10,10 @@ Antes de ejecutar el programa, asegúrese de tener configurado el entorno de ANT
 Para instalar ANTLR, puede seguir las instrucciones en la [documentación oficial](https://www.antlr.org).
 
 ### Especificaciones De La Gramatica
-![Gramatica ANTLR](Images/TablasAsDes.png)
+![Gramatica ANTLR](Images/GramaticaANTLR.png)
 
 ### Entradas Permitidas
-![Entradas Permitidas](Images/EntradasPermitidas.png)
+![Entradas Permitidas](Images/EntradasANTLR.png)
 
 
 ### Ejecución del Programa Calculadora en ANTLR

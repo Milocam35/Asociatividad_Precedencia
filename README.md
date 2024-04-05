@@ -97,20 +97,16 @@ Antes de ejecutar el programa, asegúrese de tener instalado make en su entorno 
 ### Ejecución del Programa
 
 1. Asegúrese de estar en la carpeta "bison".
-2. Abra la consola y ejecute uno de los siguientes comandos, según la gramática que desee utilizar:
-
-   - make normal: Para la gramática con asociatividad común y precedencia común.
-   - make pre: Para la gramática con asociatividad común y precedencia modificada.
-   - make aso: Para la gramática con asociatividad modificada y precedencia común.
-   - make mod: Para la gramática con asociatividad modificada y precedencia modificada.
-
-3. Después de compilar, puede editar el archivo "EjemploEntradasCalc" para especificar las entradas deseadas o agregar un archivo .txt nuevo con esas entradas en líneas diferentes.
-
+2. Puede editar el archivo "EjemploEntradasCalc" para especificar las entradas deseadas o agregar un archivo .txt nuevo con esas entradas en líneas diferentes.
 4. Para ejecutar el programa, en la consola, ejecute el siguiente comando correspondiente a la gramática que desea probar y al archivo .txt a probar:
    ```bash
+   Para la gramática con asociatividad común y precedencia común.
    - ./normal < EjemploEntradasCalc.txt
+   Para la gramática con asociatividad común y precedencia modificada.
    - ./pre < EjemploEntradasCalc.txt
+    Para la gramática con asociatividad modificada y precedencia común.
    - ./aso < EjemploEntradasCalc.txt
+   Para la gramática con asociatividad modificada y precedencia modificada.
    - ./mod < EjemploEntradasCalc.txt
    ```
 

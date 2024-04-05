@@ -53,7 +53,7 @@ class EvalVisitorMod(CalculadoraModVisitor):
     def visitAddSub(self, ctx: CalculadoraModParser.AddSubContext):
         left = self.visit(ctx.expr(1))
         right = self.visit(ctx.expr(0))
-        if ctx.op.type == CalculadoraAsoParser.ADD:
+        if ctx.op.type == CalculadoraModParser.ADD:
             result = left + right
         else:    
             result = left - right

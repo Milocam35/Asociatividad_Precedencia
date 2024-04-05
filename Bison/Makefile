@@ -10,7 +10,7 @@ pre: CalculadoraPre.l CalculadoraPre.y
 	
 aso: CalculadoraAso.l CalculadoraAso.y
 	bison -d CalculadoraAso.y
-	flex CalculadoraPre.l
+	flex CalculadoraAso.l
 	cc -o $@ CalculadoraAso.tab.c lex.yy.c -lfl -lm
 	
 mod: CalculadoraMod.l CalculadoraMod.y

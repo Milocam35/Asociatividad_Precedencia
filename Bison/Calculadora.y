@@ -12,13 +12,10 @@ int yyerror(char* s);
 %token EXP
 %token MUL DIV 
 %token ADD SUB
-%token ABS AND MOD COC
+%token ABS AND MOD
 %token NOT LESS GREAT
 %token EOL
 
-%left ADD SUB
-%left MUL DIV
-%left EXP
 
 %%
 calclist: /* nothing: matches at beginning of input */ 
@@ -63,14 +60,7 @@ expr4: prim
             $$ = $1 % $3;
         }
     }
-    | prim COC prim { 
-        if ($3 == 0) {
-            yyerror("Error: división por cero");
-            $$ = 0; // O cualquier otro valor que desees asignar
-        } else {
-            $$ = $1 / $3;
-        }
-    }
+;
 
 prim: 
       factor

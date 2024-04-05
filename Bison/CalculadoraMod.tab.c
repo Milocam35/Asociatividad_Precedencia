@@ -67,16 +67,17 @@
 
 
 /* First part of user prologue.  */
-#line 1 "CalculadoraAso.y"
+#line 1 "CalculadoraMod.y"
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <stdbool.h>
 int yylex(void);
 int yyerror(char* s);
 int op_count = 0; 
 
-#line 80 "CalculadoraAso.tab.c"
+#line 81 "CalculadoraMod.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -99,7 +100,7 @@ int op_count = 0;
 #  endif
 # endif
 
-#include "CalculadoraAso.tab.h"
+#include "CalculadoraMod.tab.h"
 /* Symbol kind.  */
 enum yysymbol_kind_t
 {
@@ -130,10 +131,10 @@ enum yysymbol_kind_t
   YYSYMBOL_expr2 = 23,                     /* expr2  */
   YYSYMBOL_expr3 = 24,                     /* expr3  */
   YYSYMBOL_expr4 = 25,                     /* expr4  */
-  YYSYMBOL_prim = 26,                      /* prim  */
-  YYSYMBOL_factor = 27,                    /* factor  */
-  YYSYMBOL_term1 = 28,                     /* term1  */
-  YYSYMBOL_term = 29                       /* term  */
+  YYSYMBOL_expr5 = 26,                     /* expr5  */
+  YYSYMBOL_expr6 = 27,                     /* expr6  */
+  YYSYMBOL_expr7 = 28,                     /* expr7  */
+  YYSYMBOL_prim = 29                       /* prim  */
 };
 typedef enum yysymbol_kind_t yysymbol_kind_t;
 
@@ -461,7 +462,7 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  2
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   48
+#define YYLAST   47
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  19
@@ -521,9 +522,9 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    21,    21,    22,    29,    33,    34,    41,    45,    46,
-      50,    51,    55,    56,    57,    60,    61,    71,    72,    73,
-      77,    78,    79,    89,    90,    93,    94,    95,    96
+       0,    22,    22,    23,    30,    34,    35,    42,    46,    47,
+      52,    53,    58,    59,    60,    63,    64,    68,    69,    70,
+      81,    82,    83,    88,    89,   100,   101,   102,   103
 };
 #endif
 
@@ -542,7 +543,7 @@ static const char *const yytname[] =
   "\"end of file\"", "error", "\"invalid token\"", "NUMBER", "BOOL", "OP",
   "CP", "EXP", "MUL", "DIV", "ADD", "SUB", "ABS", "AND", "MOD", "NOT",
   "LESS", "GREAT", "EOL", "$accept", "calclist", "expr", "expr1", "expr2",
-  "expr3", "expr4", "prim", "factor", "term1", "term", YY_NULLPTR
+  "expr3", "expr4", "expr5", "expr6", "expr7", "prim", YY_NULLPTR
 };
 
 static const char *
@@ -552,7 +553,7 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 }
 #endif
 
-#define YYPACT_NINF (-27)
+#define YYPACT_NINF (-24)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
@@ -566,11 +567,11 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-     -27,     1,   -27,   -27,   -27,     6,    19,    19,    19,   -27,
-     -10,     8,    26,   -27,    -2,    16,    30,    25,   -27,    34,
-       8,    29,     8,   -27,    19,    19,    19,    19,    19,    19,
-      19,    19,    19,    19,   -27,   -27,    26,   -27,   -27,   -27,
-      30,    30,    18,    35,   -27,    30
+     -24,     1,   -24,   -24,   -24,     6,    24,    24,    24,   -24,
+     -16,    -4,     2,   -24,     7,    17,    21,   -24,    27,    29,
+      -4,    30,    -4,   -24,    24,    24,    24,    24,    24,    24,
+      24,    24,    24,    24,   -24,   -24,     2,   -24,    17,    36,
+      36,    23,    17,   -24,   -24,   -24
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -581,14 +582,14 @@ static const yytype_int8 yydefact[] =
        2,     0,     1,    25,    26,     0,     0,     0,     0,     4,
        0,     5,     8,    10,    12,    15,    17,    20,    23,     0,
        7,     0,     6,     3,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,    28,    27,     9,    11,    13,    14,
-      18,    19,    16,    21,    24,    22
+       0,     0,     0,     0,    28,    27,     9,    11,    16,    13,
+      14,    18,    19,    21,    22,    24
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -27,   -27,    38,    27,    20,    21,    10,    15,   -26,    17,
+     -24,   -24,    39,    14,    22,    20,    10,   -23,    18,     8,
       -7
 };
 
@@ -604,20 +605,20 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-      21,     2,    40,    41,     3,     4,     5,    45,    23,     3,
-       4,     5,     6,     7,    26,    27,     8,     6,     7,     9,
-      24,     8,     3,     4,     5,    44,    28,    29,    28,    29,
-      30,     7,    32,    20,    33,    22,    38,    39,    31,    25,
-      34,    35,    32,    19,    36,    42,    37,     0,    43
+      21,     2,    23,    38,     3,     4,     5,    42,    24,     3,
+       4,     5,     6,     7,    26,    25,     8,     6,     7,     9,
+      20,     8,    22,    27,    28,    29,    45,     3,     4,     5,
+      30,    31,    32,    31,    32,    34,     7,    39,    40,    43,
+      44,    33,    35,    26,    19,    37,    36,    41
 };
 
 static const yytype_int8 yycheck[] =
 {
-       7,     0,    28,    29,     3,     4,     5,    33,    18,     3,
-       4,     5,    11,    12,    16,    17,    15,    11,    12,    18,
-      12,    15,     3,     4,     5,    32,    10,    11,    10,    11,
-      14,    12,     7,     6,     9,     8,    26,    27,     8,    13,
-       6,    12,     7,     5,    24,    30,    25,    -1,    31
+       7,     0,    18,    26,     3,     4,     5,    30,    12,     3,
+       4,     5,    11,    12,     7,    13,    15,    11,    12,    18,
+       6,    15,     8,    16,    17,     8,    33,     3,     4,     5,
+       9,    10,    11,    10,    11,     6,    12,    27,    28,    31,
+      32,    14,    12,     7,     5,    25,    24,    29
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
@@ -626,9 +627,9 @@ static const yytype_int8 yystos[] =
 {
        0,    20,     0,     3,     4,     5,    11,    12,    15,    18,
       21,    22,    23,    24,    25,    26,    27,    28,    29,    21,
-      22,    29,    22,    18,    12,    13,    16,    17,    10,    11,
-      14,     8,     7,     9,     6,    12,    23,    24,    25,    25,
-      27,    27,    26,    28,    29,    27
+      22,    29,    22,    18,    12,    13,     7,    16,    17,     8,
+       9,    10,    11,    14,     6,    12,    23,    24,    26,    25,
+      25,    27,    26,    28,    28,    29
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
@@ -1108,7 +1109,7 @@ yyreduce:
   switch (yyn)
     {
   case 3: /* calclist: calclist expr EOL  */
-#line 22 "CalculadoraAso.y"
+#line 23 "CalculadoraMod.y"
                         { 
         if ((op_count%2)==0) {
             printf("= %d\n", yyvsp[-1]); op_count = 0;
@@ -1116,17 +1117,17 @@ yyreduce:
             printf("= %d\n", yyvsp[-1]*(-1));op_count = 0;
         } 
         }
-#line 1120 "CalculadoraAso.tab.c"
+#line 1121 "CalculadoraMod.tab.c"
     break;
 
   case 4: /* calclist: calclist EOL  */
-#line 29 "CalculadoraAso.y"
+#line 30 "CalculadoraMod.y"
                    { /* Do nothing */ }
-#line 1126 "CalculadoraAso.tab.c"
+#line 1127 "CalculadoraMod.tab.c"
     break;
 
   case 6: /* expr: NOT expr1  */
-#line 34 "CalculadoraAso.y"
+#line 35 "CalculadoraMod.y"
                 {  
         if (yyvsp[0] == 0 || yyvsp[0] == 1) {
             yyval = !yyvsp[0];
@@ -1134,73 +1135,54 @@ yyreduce:
             yyerror("Error: negación aplicada a un valor no booleano");
         } 
         }
-#line 1138 "CalculadoraAso.tab.c"
+#line 1139 "CalculadoraMod.tab.c"
     break;
 
   case 7: /* expr: SUB expr1  */
-#line 41 "CalculadoraAso.y"
-                {yyval = yyvsp[0] *-1;}
-#line 1144 "CalculadoraAso.tab.c"
+#line 42 "CalculadoraMod.y"
+                 {yyval = yyvsp[0] *-1;}
+#line 1145 "CalculadoraMod.tab.c"
     break;
 
   case 9: /* expr1: expr1 ABS expr2  */
-#line 46 "CalculadoraAso.y"
+#line 47 "CalculadoraMod.y"
                       { yyval = yyvsp[0] | yyvsp[-2]; }
-#line 1150 "CalculadoraAso.tab.c"
+#line 1151 "CalculadoraMod.tab.c"
     break;
 
   case 11: /* expr2: expr2 AND expr3  */
-#line 51 "CalculadoraAso.y"
+#line 53 "CalculadoraMod.y"
                       { yyval = yyvsp[0] & yyvsp[-2]; }
-#line 1156 "CalculadoraAso.tab.c"
+#line 1157 "CalculadoraMod.tab.c"
     break;
 
   case 13: /* expr3: expr4 LESS expr4  */
-#line 56 "CalculadoraAso.y"
+#line 59 "CalculadoraMod.y"
                        { yyval = (yyvsp[0] < yyvsp[-2]) ? 1 : 0; }
-#line 1162 "CalculadoraAso.tab.c"
+#line 1163 "CalculadoraMod.tab.c"
     break;
 
   case 14: /* expr3: expr4 GREAT expr4  */
-#line 57 "CalculadoraAso.y"
+#line 60 "CalculadoraMod.y"
                         { yyval = (yyvsp[0] > yyvsp[-2]) ? 1 : 0; }
-#line 1168 "CalculadoraAso.tab.c"
+#line 1169 "CalculadoraMod.tab.c"
     break;
 
-  case 16: /* expr4: prim MOD prim  */
-#line 61 "CalculadoraAso.y"
-                    { 
-        if (yyvsp[-2] == 0) {
-            yyerror("Error: división por cero");
-            yyval = 0; // O cualquier otro valor que desees asignar
-        } else {
-            yyval = yyvsp[0] % yyvsp[-2];
-        }
-    }
-#line 1181 "CalculadoraAso.tab.c"
+  case 16: /* expr4: expr4 EXP expr5  */
+#line 64 "CalculadoraMod.y"
+                      { yyval = pow(yyvsp[0], yyvsp[-2]); }
+#line 1175 "CalculadoraMod.tab.c"
     break;
 
-  case 18: /* prim: prim ADD factor  */
-#line 72 "CalculadoraAso.y"
-                      { yyval = yyvsp[0] + yyvsp[-2]; }
-#line 1187 "CalculadoraAso.tab.c"
+  case 18: /* expr5: expr5 MUL expr6  */
+#line 69 "CalculadoraMod.y"
+                      { yyval = yyvsp[0] * yyvsp[-2]; }
+#line 1181 "CalculadoraMod.tab.c"
     break;
 
-  case 19: /* prim: prim SUB factor  */
-#line 73 "CalculadoraAso.y"
-                      { yyval = yyvsp[0] - yyvsp[-2]; op_count++;}
-#line 1193 "CalculadoraAso.tab.c"
-    break;
-
-  case 21: /* factor: factor MUL term1  */
-#line 78 "CalculadoraAso.y"
-                       { yyval = yyvsp[0] * yyvsp[-2]; }
-#line 1199 "CalculadoraAso.tab.c"
-    break;
-
-  case 22: /* factor: term1 DIV factor  */
-#line 79 "CalculadoraAso.y"
-                       { 
+  case 19: /* expr5: expr6 DIV expr5  */
+#line 70 "CalculadoraMod.y"
+                      { 
         if (yyvsp[0] == 0) {
             yyerror("Error: división por cero");
             yyval = 0; // O cualquier otro valor que desees asignar
@@ -1208,29 +1190,48 @@ yyreduce:
             yyval = yyvsp[-2] / yyvsp[0];
         }
     }
-#line 1212 "CalculadoraAso.tab.c"
+#line 1194 "CalculadoraMod.tab.c"
     break;
 
-  case 24: /* term1: term1 EXP term  */
-#line 90 "CalculadoraAso.y"
-                     { yyval = pow(yyvsp[0], yyvsp[-2]); }
-#line 1218 "CalculadoraAso.tab.c"
+  case 21: /* expr6: expr6 ADD expr7  */
+#line 82 "CalculadoraMod.y"
+                      { yyval = yyvsp[0] + yyvsp[-2]; }
+#line 1200 "CalculadoraMod.tab.c"
     break;
 
-  case 27: /* term: ABS term ABS  */
-#line 95 "CalculadoraAso.y"
+  case 22: /* expr6: expr6 SUB expr7  */
+#line 83 "CalculadoraMod.y"
+                      { yyval = yyvsp[0] - yyvsp[-2];op_count++; }
+#line 1206 "CalculadoraMod.tab.c"
+    break;
+
+  case 24: /* expr7: prim MOD prim  */
+#line 89 "CalculadoraMod.y"
+                    { 
+        if (yyvsp[0] == 0) {
+            yyerror("Error: división por cero");
+            yyval = 0; // O cualquier otro valor que desees asignar
+        } else {
+            yyval = yyvsp[0] % yyvsp[-2];
+        }
+    }
+#line 1219 "CalculadoraMod.tab.c"
+    break;
+
+  case 27: /* prim: ABS prim ABS  */
+#line 102 "CalculadoraMod.y"
                    { yyval = yyvsp[-1] >= 0? yyvsp[-1] : - yyvsp[-1]; }
-#line 1224 "CalculadoraAso.tab.c"
+#line 1225 "CalculadoraMod.tab.c"
     break;
 
-  case 28: /* term: OP expr CP  */
-#line 96 "CalculadoraAso.y"
+  case 28: /* prim: OP expr CP  */
+#line 103 "CalculadoraMod.y"
                  { yyval = yyvsp[-1]; }
-#line 1230 "CalculadoraAso.tab.c"
+#line 1231 "CalculadoraMod.tab.c"
     break;
 
 
-#line 1234 "CalculadoraAso.tab.c"
+#line 1235 "CalculadoraMod.tab.c"
 
       default: break;
     }
@@ -1423,7 +1424,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 99 "CalculadoraAso.y"
+#line 106 "CalculadoraMod.y"
 
 int main(int argc, char **argv)
 {
@@ -1435,3 +1436,4 @@ int yyerror(char *s)
     fprintf(stderr, "error: %s\n", s);
     exit(EXIT_FAILURE); // Terminar el programa con un código de error
 }
+

@@ -8,7 +8,6 @@
 ">" { return GREAT; }
 "!" { return NOT; }
 "%" { return MOD; }
-"//" { return COC; }
 "&" { return AND; }
 "|" { return ABS; }
 "+" { return ADD; }

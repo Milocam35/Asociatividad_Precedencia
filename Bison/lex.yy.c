@@ -373,8 +373,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 22
-#define YY_END_OF_BUFFER 23
+#define YY_NUM_RULES 21
+#define YY_END_OF_BUFFER 22
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -384,10 +384,10 @@ struct yy_trans_info
 	};
 static const flex_int16_t yy_accept[34] =
     {   0,
-        0,    0,   23,   21,   19,   18,    3,    4,    6,   13,
-       14,   10,    8,    9,   11,   15,    1,    2,   12,   21,
-       21,    7,    5,   15,    0,    0,   20,    0,    0,    0,
-       16,   17,    0
+        0,    0,   22,   20,   18,   17,    3,    4,    5,   12,
+       13,    9,    7,    8,   10,   14,    1,    2,   11,   20,
+       20,    6,   19,   14,    0,    0,   19,    0,    0,    0,
+       15,   16,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -468,10 +468,10 @@ static const flex_int16_t yy_chk[64] =
     } ;
 
 /* Table of booleans, true if rule could match eol. */
-static const flex_int32_t yy_rule_can_match_eol[23] =
+static const flex_int32_t yy_rule_can_match_eol[22] =
     {   0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 
-    0, 0, 0,     };
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 
+    0, 0,     };
 
 static yy_state_type yy_last_accepting_state;
 static char *yy_last_accepting_cpos;
@@ -487,9 +487,9 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "CalculadoraPre.l"
-#line 3 "CalculadoraPre.l"
-#include "CalculadoraPre.tab.h"
+#line 1 "CalculadoraMod.l"
+#line 3 "CalculadoraMod.l"
+#include "CalculadoraMod.tab.h"
 #line 494 "lex.yy.c"
 #line 495 "lex.yy.c"
 
@@ -708,7 +708,7 @@ YY_DECL
 		}
 
 	{
-#line 6 "CalculadoraPre.l"
+#line 6 "CalculadoraMod.l"
 
 #line 714 "lex.yy.c"
 
@@ -779,116 +779,111 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 7 "CalculadoraPre.l"
+#line 7 "CalculadoraMod.l"
 { return LESS; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 8 "CalculadoraPre.l"
+#line 8 "CalculadoraMod.l"
 { return GREAT; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 9 "CalculadoraPre.l"
+#line 9 "CalculadoraMod.l"
 { return NOT; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 10 "CalculadoraPre.l"
+#line 10 "CalculadoraMod.l"
 { return MOD; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 11 "CalculadoraPre.l"
-{ return COC; }
+#line 11 "CalculadoraMod.l"
+{ return AND; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 12 "CalculadoraPre.l"
-{ return AND; }
+#line 12 "CalculadoraMod.l"
+{ return ABS; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 13 "CalculadoraPre.l"
-{ return ABS; }
+#line 13 "CalculadoraMod.l"
+{ return ADD; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 14 "CalculadoraPre.l"
-{ return ADD; }
+#line 14 "CalculadoraMod.l"
+{ return SUB; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 15 "CalculadoraPre.l"
-{ return SUB; }
+#line 15 "CalculadoraMod.l"
+{ return MUL; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 16 "CalculadoraPre.l"
-{ return MUL; }
+#line 16 "CalculadoraMod.l"
+{ return DIV; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 17 "CalculadoraPre.l"
-{ return DIV; }
+#line 17 "CalculadoraMod.l"
+{ return EXP; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 18 "CalculadoraPre.l"
-{ return EXP; }
+#line 18 "CalculadoraMod.l"
+{ return OP; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 19 "CalculadoraPre.l"
-{ return OP; }
+#line 19 "CalculadoraMod.l"
+{ return CP; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 20 "CalculadoraPre.l"
-{ return CP; }
+#line 20 "CalculadoraMod.l"
+{ yylval = atoi(yytext); return NUMBER; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 21 "CalculadoraPre.l"
-{ yylval = atoi(yytext); return NUMBER; }
+#line 21 "CalculadoraMod.l"
+{ yylval = 1; return BOOL; }  
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 22 "CalculadoraPre.l"
-{ yylval = 1; return BOOL; }  
-	YY_BREAK
-case 17:
-YY_RULE_SETUP
-#line 23 "CalculadoraPre.l"
+#line 22 "CalculadoraMod.l"
 { yylval = 0; return BOOL; }
 	YY_BREAK
-case 18:
-/* rule 18 can match eol */
+case 17:
+/* rule 17 can match eol */
 YY_RULE_SETUP
-#line 24 "CalculadoraPre.l"
+#line 23 "CalculadoraMod.l"
 { return EOL; }
+	YY_BREAK
+case 18:
+YY_RULE_SETUP
+#line 24 "CalculadoraMod.l"
+{ /* ignore white space */ }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 25 "CalculadoraPre.l"
-{ /* ignore white space */ }
+#line 25 "CalculadoraMod.l"
+{  }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 26 "CalculadoraPre.l"
-{  }
+#line 26 "CalculadoraMod.l"
+{ printf("Mystery character %c\n", *yytext); }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 27 "CalculadoraPre.l"
-{ printf("Mystery character %c\n", *yytext); }
-	YY_BREAK
-case 22:
-YY_RULE_SETUP
-#line 28 "CalculadoraPre.l"
+#line 27 "CalculadoraMod.l"
 YY_FATAL_ERROR( "flex scanner jammed" );
 	YY_BREAK
-#line 892 "lex.yy.c"
+#line 887 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1905,6 +1900,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 28 "CalculadoraPre.l"
+#line 27 "CalculadoraMod.l"
 
 

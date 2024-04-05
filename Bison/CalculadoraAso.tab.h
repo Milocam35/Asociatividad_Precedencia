@@ -66,11 +66,10 @@ extern int yydebug;
     ABS = 267,                     /* ABS  */
     AND = 268,                     /* AND  */
     MOD = 269,                     /* MOD  */
-    COC = 270,                     /* COC  */
-    NOT = 271,                     /* NOT  */
-    LESS = 272,                    /* LESS  */
-    GREAT = 273,                   /* GREAT  */
-    EOL = 274                      /* EOL  */
+    NOT = 270,                     /* NOT  */
+    LESS = 271,                    /* LESS  */
+    GREAT = 272,                   /* GREAT  */
+    EOL = 273                      /* EOL  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif

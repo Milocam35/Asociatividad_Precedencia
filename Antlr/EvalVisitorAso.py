@@ -5,6 +5,7 @@ import math
 
 class EvalVisitorAso(CalculadoraAsoVisitor):
     memory = {}
+    op_count = 0 
 
     def visitAssign(self, ctx: CalculadoraAsoParser.AssignContext):
         id_ = ctx.ID().getText()
@@ -14,7 +15,12 @@ class EvalVisitorAso(CalculadoraAsoVisitor):
 
     def visitPrintExpr(self, ctx: CalculadoraAsoParser.PrintExprContext):
         value = self.visit(ctx.expr())
-        print(value)
+        if ((self.op_count %2)==0):
+            print("= ", value)
+            self.op_count = 0
+        else:
+            print("= ", value*(-1))
+            self.op_count = 0
         return 0
         
     def visitBool(self, ctx: CalculadoraAsoParser.BoolContext):
@@ -52,6 +58,7 @@ class EvalVisitorAso(CalculadoraAsoVisitor):
             result = left + right
         else:    
             result = left - right
+            self.op_count += 1; 
         return result
 
 

@@ -5,6 +5,7 @@ import math
 
 class EvalVisitorMod(CalculadoraModVisitor):
     memory = {}
+    op_count = 0 
 
     def visitAssign(self, ctx: CalculadoraModParser.AssignContext):
         id_ = ctx.ID().getText()
@@ -14,7 +15,12 @@ class EvalVisitorMod(CalculadoraModVisitor):
 
     def visitPrintExpr(self, ctx: CalculadoraModParser.PrintExprContext):
         value = self.visit(ctx.expr())
-        print(value)
+        if ((self.op_count %2)==0):
+            print("= ", value)
+            self.op_count = 0
+        else:
+            print("= ", value*(-1))
+            self.op_count = 0
         return 0
         
     def visitBool(self, ctx: CalculadoraModParser.BoolContext):
@@ -47,8 +53,12 @@ class EvalVisitorMod(CalculadoraModVisitor):
     def visitAddSub(self, ctx: CalculadoraModParser.AddSubContext):
         left = self.visit(ctx.expr(1))
         right = self.visit(ctx.expr(0))
-
-        return left + right if ctx.op.type == CalculadoraModParser.ADD else left - right
+        if ctx.op.type == CalculadoraAsoParser.ADD:
+            result = left + right
+        else:    
+            result = left - right
+            self.op_count += 1; 
+        return result
 
     def visitParens(self, ctx: CalculadoraModParser.ParensContext):
         return self.visit(ctx.expr())

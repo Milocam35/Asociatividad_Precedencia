@@ -47,7 +47,6 @@ def main():
         tree = parser.prog()  # parse
         visitor = EvalVisitor()
         visitor.visit(tree)
-        print(Trees.toStringTree(tree, None, parser))
         
     elif choice == '2':
         lexer = CalculadoraPreLexer(input_stream)
@@ -64,7 +63,6 @@ def main():
         tree = parser.prog()  # parse
         visitor = EvalVisitorAso()
         visitor.visit(tree)
-        print(Trees.toStringTree(tree, None, parser))
 
     elif choice == '4':
         lexer = CalculadoraModLexer(input_stream)
@@ -73,7 +71,6 @@ def main():
         tree = parser.prog()  # parse
         visitor = EvalVisitorMod()
         visitor.visit(tree)
-        print(Trees.toStringTree(tree, None, parser))
 	    
 
     else:
